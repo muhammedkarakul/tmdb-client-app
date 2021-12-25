@@ -1,8 +1,10 @@
 # TMDB Client App
 
 ## Instructions
+
 <details>
 <summary>Instructions for project setup.</summary>
+<br>
 1. Clone the project.
 2. Go to "TMDB Client App" folder location on terminal and enter "pod install --repo-update" command.
 3. Open .xcworkspace file.
@@ -32,9 +34,11 @@ function test() {
 ```
 </details>
 
-## About
+## About
+
 <details>
 <summary>About project structure.</summary>
+<br>
 ### Folders
 
     .
@@ -53,6 +57,7 @@ function test() {
         ├── Info.plist                              
         └── Config.xcconfig                         # You need to generate your own config file for sensitive key definitions.
 
+<br>
 ### 3rd Party Libraries
 
 Cocoapods used for package managing.
