@@ -27,7 +27,7 @@
 		571EAC1B27772FF30072777A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		571EAC1D27772FF30072777A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		577FE1E127774C0D00E76265 /* TMDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBService.swift; sourceTree = "<group>"; };
-		577FE1E32777576600E76265 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		577FE1E427775D1100E76265 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		84F204C54E420CC358969A51 /* Pods-TMDB Client App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB Client App.release.xcconfig"; path = "Target Support Files/Pods-TMDB Client App/Pods-TMDB Client App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,7 +79,7 @@
 				571EAC1827772FF30072777A /* Assets.xcassets */,
 				571EAC1A27772FF30072777A /* LaunchScreen.storyboard */,
 				571EAC1D27772FF30072777A /* Info.plist */,
-				577FE1E32777576600E76265 /* Config.xcconfig */,
+				577FE1E427775D1100E76265 /* Config.xcconfig */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 /* Begin XCBuildConfiguration section */
 		571EAC1E27772FF30072777A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 577FE1E32777576600E76265 /* Config.xcconfig */;
+			baseConfigurationReference = 577FE1E427775D1100E76265 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -359,7 +359,7 @@
 		};
 		571EAC1F27772FF30072777A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 577FE1E32777576600E76265 /* Config.xcconfig */;
+			baseConfigurationReference = 577FE1E427775D1100E76265 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
