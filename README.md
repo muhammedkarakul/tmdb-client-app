@@ -1,6 +1,8 @@
 # TMDB Client App
 
-### Instructions
+## Instructions
+<details>
+<summary>Instructions for project setup.</summary>
 1. Clone the project.
 2. Go to "TMDB Client App" folder location on terminal and enter "pod install --repo-update" command.
 3. Open .xcworkspace file.
@@ -28,3 +30,40 @@ function test() {
   console.log("notice the blank line before this function?");
 }
 ```
+</details>
+
+## About
+<details>
+<summary>About project structure.</summary>
+### Folders
+
+    .
+    ├── App                                         # Files used globally the application.
+    │   └── Services                                # API services.
+    │       └── TMDBService.swift                   # TMDB API service definition.
+    ├── Screens                                     # Screens components(model, view, view model and controller).
+    │   └── Initial                                 # Initial screen components.
+    │       └── Controller                          
+    │           └── InitialViewController.swift     # Initial screen view controller.
+    └── Supporting Files
+        ├── Assets.swift                            # Generated via SwiftGen for Assets.
+        ├── AppDelegate.swift                       
+        ├── Assets.xcassets                         
+        ├── LaunchScreen.storyboard                 
+        ├── Info.plist                              
+        └── Config.xcconfig                         # You need to generate your own config file for sensitive key definitions.
+
+### 3rd Party Libraries
+
+Cocoapods used for package managing.
+
+- Layout
+    - SnapKit: Makes auto layout definitions easy.
+- Network
+    - Alamofire: Network operations.
+    - Moya: Clean network layer.
+    - Kingfisher: Async image downloading. 
+- Helper
+    - SwiftGen: Clean asset usage.
+
+</details>
