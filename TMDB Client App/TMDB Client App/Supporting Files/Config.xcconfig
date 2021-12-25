@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  TMDB Client App
+//
+//  Created by Muhammed Karakul on 25.12.2021.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+API_KEY = b439caaae1aba9708b870222dfc5998a

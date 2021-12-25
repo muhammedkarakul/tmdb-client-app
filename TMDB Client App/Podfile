@@ -15,6 +15,7 @@ target 'TMDB Client App' do
 
   # Network
   pod 'Alamofire'
+  pod 'Moya'
   pod 'Kingfisher'
   
   # Helper

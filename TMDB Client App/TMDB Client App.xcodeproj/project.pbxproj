@@ -12,6 +12,7 @@
 		571EAC1427772FEF0072777A /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571EAC1327772FEF0072777A /* InitialViewController.swift */; };
 		571EAC1927772FF30072777A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 571EAC1827772FF30072777A /* Assets.xcassets */; };
 		571EAC1C27772FF30072777A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 571EAC1A27772FF30072777A /* LaunchScreen.storyboard */; };
+		577FE1E227774C0D00E76265 /* TMDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FE1E127774C0D00E76265 /* TMDBService.swift */; };
 		D4E8528B5BC4289C2F112BB2 /* Pods_TMDB_Client_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50EEBB9363DF3A29EF4243D3 /* Pods_TMDB_Client_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,8 @@
 		571EAC1827772FF30072777A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		571EAC1B27772FF30072777A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		571EAC1D27772FF30072777A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		577FE1E127774C0D00E76265 /* TMDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBService.swift; sourceTree = "<group>"; };
+		577FE1E32777576600E76265 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		84F204C54E420CC358969A51 /* Pods-TMDB Client App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB Client App.release.xcconfig"; path = "Target Support Files/Pods-TMDB Client App/Pods-TMDB Client App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +64,7 @@
 		571EAC0E27772FEF0072777A /* TMDB Client App */ = {
 			isa = PBXGroup;
 			children = (
+				577FE1DF27774B7C00E76265 /* App */,
 				571EAC24277734610072777A /* Screens */,
 				571EAC23277734520072777A /* Supporting Files */,
 			);
@@ -75,6 +79,7 @@
 				571EAC1827772FF30072777A /* Assets.xcassets */,
 				571EAC1A27772FF30072777A /* LaunchScreen.storyboard */,
 				571EAC1D27772FF30072777A /* Info.plist */,
+				577FE1E32777576600E76265 /* Config.xcconfig */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -101,6 +106,22 @@
 				571EAC1327772FEF0072777A /* InitialViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		577FE1DF27774B7C00E76265 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				577FE1E027774B8300E76265 /* Services */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		577FE1E027774B8300E76265 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				577FE1E127774C0D00E76265 /* TMDBService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		6CDC8523BE97EA0F262E0176 /* Frameworks */ = {
@@ -253,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				577FE1E227774C0D00E76265 /* TMDBService.swift in Sources */,
 				571EAC1427772FEF0072777A /* InitialViewController.swift in Sources */,
 				571EAC1027772FEF0072777A /* AppDelegate.swift in Sources */,
 				5714760A277745B500D2B41F /* Assets.swift in Sources */,
@@ -275,6 +297,7 @@
 /* Begin XCBuildConfiguration section */
 		571EAC1E27772FF30072777A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 577FE1E32777576600E76265 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -336,6 +359,7 @@
 		};
 		571EAC1F27772FF30072777A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 577FE1E32777576600E76265 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
