@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		571EAC1027772FEF0072777A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571EAC0F27772FEF0072777A /* AppDelegate.swift */; };
-		571EAC1227772FEF0072777A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571EAC1127772FEF0072777A /* SceneDelegate.swift */; };
-		571EAC1427772FEF0072777A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571EAC1327772FEF0072777A /* ViewController.swift */; };
-		571EAC1727772FEF0072777A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 571EAC1527772FEF0072777A /* Main.storyboard */; };
+		571EAC1427772FEF0072777A /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571EAC1327772FEF0072777A /* InitialViewController.swift */; };
 		571EAC1927772FF30072777A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 571EAC1827772FF30072777A /* Assets.xcassets */; };
 		571EAC1C27772FF30072777A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 571EAC1A27772FF30072777A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,9 +16,7 @@
 /* Begin PBXFileReference section */
 		571EAC0C27772FEF0072777A /* TMDB Client App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TMDB Client App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		571EAC0F27772FEF0072777A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		571EAC1127772FEF0072777A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		571EAC1327772FEF0072777A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		571EAC1627772FEF0072777A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		571EAC1327772FEF0072777A /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		571EAC1827772FF30072777A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		571EAC1B27772FF30072777A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		571EAC1D27772FF30072777A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,15 +52,45 @@
 		571EAC0E27772FEF0072777A /* TMDB Client App */ = {
 			isa = PBXGroup;
 			children = (
+				571EAC24277734610072777A /* Screens */,
+				571EAC23277734520072777A /* Supporting Files */,
+			);
+			path = "TMDB Client App";
+			sourceTree = "<group>";
+		};
+		571EAC23277734520072777A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				571EAC0F27772FEF0072777A /* AppDelegate.swift */,
-				571EAC1127772FEF0072777A /* SceneDelegate.swift */,
-				571EAC1327772FEF0072777A /* ViewController.swift */,
-				571EAC1527772FEF0072777A /* Main.storyboard */,
 				571EAC1827772FF30072777A /* Assets.xcassets */,
 				571EAC1A27772FF30072777A /* LaunchScreen.storyboard */,
 				571EAC1D27772FF30072777A /* Info.plist */,
 			);
-			path = "TMDB Client App";
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		571EAC24277734610072777A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				571EAC25277734660072777A /* Initial */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		571EAC25277734660072777A /* Initial */ = {
+			isa = PBXGroup;
+			children = (
+				571EAC262777346E0072777A /* Controller */,
+			);
+			path = Initial;
+			sourceTree = "<group>";
+		};
+		571EAC262777346E0072777A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				571EAC1327772FEF0072777A /* InitialViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +153,6 @@
 			files = (
 				571EAC1C27772FF30072777A /* LaunchScreen.storyboard in Resources */,
 				571EAC1927772FF30072777A /* Assets.xcassets in Resources */,
-				571EAC1727772FEF0072777A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +163,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				571EAC1427772FEF0072777A /* ViewController.swift in Sources */,
+				571EAC1427772FEF0072777A /* InitialViewController.swift in Sources */,
 				571EAC1027772FEF0072777A /* AppDelegate.swift in Sources */,
-				571EAC1227772FEF0072777A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		571EAC1527772FEF0072777A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				571EAC1627772FEF0072777A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		571EAC1A27772FF30072777A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -290,22 +306,23 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "TMDB Client App/Info.plist";
+				INFOPLIST_FILE = "TMDB Client App/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "muhammed-karakul.TMDB-Client-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,22 +334,23 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "TMDB Client App/Info.plist";
+				INFOPLIST_FILE = "TMDB Client App/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "muhammed-karakul.TMDB-Client-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
