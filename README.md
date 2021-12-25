@@ -8,20 +8,18 @@
 <img src="Instruction Assets/instruction_0.jpeg"/>
 
 <img src="Instruction Assets/instruction_1.jpeg"/>
-
-<img src="Instruction Assets/instruction_2.jpeg"/>
     
 5. Add your TMDB api key in your config file.
 
-<img src="Instruction Assets/instruction_3.jpeg"/>
+<img src="Instruction Assets/instruction_2.jpeg"/>
     
 6. Give referance your api key defination in info.plist file.
 
-<img src="Instruction Assets/instruction_4.jpeg"/>
+<img src="Instruction Assets/instruction_3.jpeg"/>
     
 7. Set your project Debug and Release configuration to your config file.
 
-<img src="Instruction Assets/instruction_5.jpeg"/>
+<img src="Instruction Assets/instruction_4.jpeg"/>
     
 8. That's all folks! You can call your api key like below;
 
