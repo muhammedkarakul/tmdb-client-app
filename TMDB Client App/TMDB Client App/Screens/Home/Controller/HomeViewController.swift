@@ -8,9 +8,24 @@
 import UIKit
 
 final class HomeViewController: TMDBViewController<HomeView> {
-    // MARK: - Lifecycle
-    override func configureAppearance() {
-        super.configureAppearance()
-        baseView.backgroundColor = .systemBlue
+    // MARK: - Setup
+    override func linkInteractor() {
+        baseView.setTableViewDelegate(self, andDataSource: self)
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension HomeViewController: UITableViewDelegate {
+    
+}
+
+// MARK: - UITableViewDataSource
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        UITableViewCell()
     }
 }

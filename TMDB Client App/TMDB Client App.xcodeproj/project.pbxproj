@@ -83,9 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				57147609277745B500D2B41F /* Assets.swift */,
-				571EAC0F27772FEF0072777A /* AppDelegate.swift */,
 				571EAC1827772FF30072777A /* Assets.xcassets */,
-				571EAC1A27772FF30072777A /* LaunchScreen.storyboard */,
 				571EAC1D27772FF30072777A /* Info.plist */,
 				577FE1E427775D1100E76265 /* Config.xcconfig */,
 			);
@@ -103,6 +101,8 @@
 		577FE1DF27774B7C00E76265 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				577FE1F4277850EE00E76265 /* View */,
+				577FE1F3277850D700E76265 /* Delegate */,
 				577FE1E92778467C00E76265 /* Core */,
 				577FE1E027774B8300E76265 /* Services */,
 			);
@@ -148,6 +148,22 @@
 			isa = PBXGroup;
 			children = (
 				577FE1EF2778487400E76265 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		577FE1F3277850D700E76265 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				571EAC0F27772FEF0072777A /* AppDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		577FE1F4277850EE00E76265 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				571EAC1A27772FF30072777A /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
