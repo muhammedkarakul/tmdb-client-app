@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		5714760A277745B500D2B41F /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57147609277745B500D2B41F /* Assets.swift */; };
 		571EAC1027772FEF0072777A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571EAC0F27772FEF0072777A /* AppDelegate.swift */; };
-		571EAC1427772FEF0072777A /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571EAC1327772FEF0072777A /* InitialViewController.swift */; };
 		571EAC1927772FF30072777A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 571EAC1827772FF30072777A /* Assets.xcassets */; };
 		571EAC1C27772FF30072777A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 571EAC1A27772FF30072777A /* LaunchScreen.storyboard */; };
 		577FE1E227774C0D00E76265 /* TMDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FE1E127774C0D00E76265 /* TMDBService.swift */; };
+		577FE1E8277845B800E76265 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FE1E7277845B800E76265 /* HomeViewController.swift */; };
+		577FE1EB277846AC00E76265 /* TMDBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FE1EA277846AC00E76265 /* TMDBViewController.swift */; };
+		577FE1ED277847D800E76265 /* TMDBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FE1EC277847D800E76265 /* TMDBView.swift */; };
+		577FE1F02778487400E76265 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FE1EF2778487400E76265 /* HomeView.swift */; };
+		577FE1F227784FA300E76265 /* TMDBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FE1F127784FA300E76265 /* TMDBNavigationController.swift */; };
 		D4E8528B5BC4289C2F112BB2 /* Pods_TMDB_Client_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50EEBB9363DF3A29EF4243D3 /* Pods_TMDB_Client_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,12 +26,16 @@
 		57147609277745B500D2B41F /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		571EAC0C27772FEF0072777A /* TMDB Client App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TMDB Client App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		571EAC0F27772FEF0072777A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		571EAC1327772FEF0072777A /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		571EAC1827772FF30072777A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		571EAC1B27772FF30072777A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		571EAC1D27772FF30072777A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		577FE1E127774C0D00E76265 /* TMDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBService.swift; sourceTree = "<group>"; };
 		577FE1E427775D1100E76265 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		577FE1E7277845B800E76265 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		577FE1EA277846AC00E76265 /* TMDBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBViewController.swift; sourceTree = "<group>"; };
+		577FE1EC277847D800E76265 /* TMDBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBView.swift; sourceTree = "<group>"; };
+		577FE1EF2778487400E76265 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		577FE1F127784FA300E76265 /* TMDBNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBNavigationController.swift; sourceTree = "<group>"; };
 		84F204C54E420CC358969A51 /* Pods-TMDB Client App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB Client App.release.xcconfig"; path = "Target Support Files/Pods-TMDB Client App/Pods-TMDB Client App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,30 +95,15 @@
 		571EAC24277734610072777A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				571EAC25277734660072777A /* Initial */,
+				577FE1E52778458C00E76265 /* Home */,
 			);
 			path = Screens;
-			sourceTree = "<group>";
-		};
-		571EAC25277734660072777A /* Initial */ = {
-			isa = PBXGroup;
-			children = (
-				571EAC262777346E0072777A /* Controller */,
-			);
-			path = Initial;
-			sourceTree = "<group>";
-		};
-		571EAC262777346E0072777A /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				571EAC1327772FEF0072777A /* InitialViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		577FE1DF27774B7C00E76265 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				577FE1E92778467C00E76265 /* Core */,
 				577FE1E027774B8300E76265 /* Services */,
 			);
 			path = App;
@@ -122,6 +115,41 @@
 				577FE1E127774C0D00E76265 /* TMDBService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		577FE1E52778458C00E76265 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				577FE1EE2778486700E76265 /* View */,
+				577FE1E62778459B00E76265 /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		577FE1E62778459B00E76265 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				577FE1E7277845B800E76265 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		577FE1E92778467C00E76265 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				577FE1EA277846AC00E76265 /* TMDBViewController.swift */,
+				577FE1EC277847D800E76265 /* TMDBView.swift */,
+				577FE1F127784FA300E76265 /* TMDBNavigationController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		577FE1EE2778486700E76265 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				577FE1EF2778487400E76265 /* HomeView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6CDC8523BE97EA0F262E0176 /* Frameworks */ = {
@@ -274,10 +302,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				577FE1EB277846AC00E76265 /* TMDBViewController.swift in Sources */,
+				577FE1F02778487400E76265 /* HomeView.swift in Sources */,
 				577FE1E227774C0D00E76265 /* TMDBService.swift in Sources */,
-				571EAC1427772FEF0072777A /* InitialViewController.swift in Sources */,
 				571EAC1027772FEF0072777A /* AppDelegate.swift in Sources */,
+				577FE1F227784FA300E76265 /* TMDBNavigationController.swift in Sources */,
+				577FE1ED277847D800E76265 /* TMDBView.swift in Sources */,
 				5714760A277745B500D2B41F /* Assets.swift in Sources */,
+				577FE1E8277845B800E76265 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

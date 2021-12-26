@@ -23,8 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupWindow() {
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let initialViewController = InitialViewController()
-        let navigationController = UINavigationController(rootViewController: initialViewController)
+        let initialViewController = HomeViewController()
+        let navigationController = TMDBNavigationController(rootViewController: initialViewController)
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
         self.window = window
