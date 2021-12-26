@@ -9,9 +9,21 @@ import UIKit
 
 final class HomeView: TMDBView {
     // MARK: - Properties
-    private var tableView = UITableView()
+    private var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.contentInset = .zero
+        tableView.showsHorizontalScrollIndicator = false
+        tableView.showsVerticalScrollIndicator = false
+        return tableView
+    }()
     
     // MARK: Setup
+    override func linkInteractor() {
+        super.linkInteractor()
+        tableView.register(SliderTableViewCell.self, forCellReuseIdentifier: "SliderTableViewCell")
+        tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: "MovieTableViewCell")
+    }
+    
     override func prepareLayout() {
         super.prepareLayout()
         setupTableViewLayout()

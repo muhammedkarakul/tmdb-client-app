@@ -17,6 +17,8 @@
 		577FE1ED277847D800E76265 /* TMDBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FE1EC277847D800E76265 /* TMDBView.swift */; };
 		577FE1F02778487400E76265 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FE1EF2778487400E76265 /* HomeView.swift */; };
 		577FE1F227784FA300E76265 /* TMDBNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FE1F127784FA300E76265 /* TMDBNavigationController.swift */; };
+		577FE1F727788EA400E76265 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FE1F627788EA400E76265 /* SliderTableViewCell.swift */; };
+		577FE1F927788ED900E76265 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577FE1F827788ED900E76265 /* MovieTableViewCell.swift */; };
 		D4E8528B5BC4289C2F112BB2 /* Pods_TMDB_Client_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50EEBB9363DF3A29EF4243D3 /* Pods_TMDB_Client_App.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		577FE1EC277847D800E76265 /* TMDBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBView.swift; sourceTree = "<group>"; };
 		577FE1EF2778487400E76265 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		577FE1F127784FA300E76265 /* TMDBNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBNavigationController.swift; sourceTree = "<group>"; };
+		577FE1F627788EA400E76265 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
+		577FE1F827788ED900E76265 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		84F204C54E420CC358969A51 /* Pods-TMDB Client App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB Client App.release.xcconfig"; path = "Target Support Files/Pods-TMDB Client App/Pods-TMDB Client App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +124,7 @@
 		577FE1E52778458C00E76265 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				577FE1F527788E5000E76265 /* Cells */,
 				577FE1EE2778486700E76265 /* View */,
 				577FE1E62778459B00E76265 /* Controller */,
 			);
@@ -166,6 +171,15 @@
 				571EAC1A27772FF30072777A /* LaunchScreen.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		577FE1F527788E5000E76265 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				577FE1F627788EA400E76265 /* SliderTableViewCell.swift */,
+				577FE1F827788ED900E76265 /* MovieTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		6CDC8523BE97EA0F262E0176 /* Frameworks */ = {
@@ -318,10 +332,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				577FE1F927788ED900E76265 /* MovieTableViewCell.swift in Sources */,
 				577FE1EB277846AC00E76265 /* TMDBViewController.swift in Sources */,
 				577FE1F02778487400E76265 /* HomeView.swift in Sources */,
 				577FE1E227774C0D00E76265 /* TMDBService.swift in Sources */,
 				571EAC1027772FEF0072777A /* AppDelegate.swift in Sources */,
+				577FE1F727788EA400E76265 /* SliderTableViewCell.swift in Sources */,
 				577FE1F227784FA300E76265 /* TMDBNavigationController.swift in Sources */,
 				577FE1ED277847D800E76265 /* TMDBView.swift in Sources */,
 				5714760A277745B500D2B41F /* Assets.swift in Sources */,
