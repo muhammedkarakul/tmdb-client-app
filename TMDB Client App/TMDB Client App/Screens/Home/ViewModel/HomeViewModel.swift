@@ -9,47 +9,38 @@ import Foundation
 
 final class HomeViewModel: TMDBViewModel {
     // MARK: - Properties
-    private var nowPlayingMovies = [NowPlayingMovie]()
-    private var upcomingMovies = [UpcomingMovie]()
+    private var nowPlayingMovies = [Movie]()
+    private var upcomingMovies = [Movie]()
     
-    var numberOfSections: Int {
-        2
+    var numberOfRowsInTable: Int {
+        upcomingMovies.count
     }
     
-    func numberOfRowsInSection(_ section: Int) -> Int {
-        switch section {
-        case 0:
-            return 1
-        default:
-            return upcomingMovies.count
-        }
+    var numberOfRowsInCollection: Int {
+        nowPlayingMovies.count
     }
     
     // MARK: - Methods
-    func configureSliderTableViewCell(_ cell: SliderTableViewCell) {
-        cell.numberOfPages = nowPlayingMovies.count
-        nowPlayingMovies.enumerated().forEach { index, nowPlayingMovie in
-            cell.sliderViews[index].imageView.kf.setImage(with: nowPlayingMovie.posterURL)
-            cell.sliderViews[index].title = nowPlayingMovie.title
-            cell.sliderViews[index].overview = nowPlayingMovie.overview
-        }
+    
+    func configureNowPlayingMovieCollectionViewCell(_ cell: NowPlayingMovieCollectionViewCell, forIndexPath indexPath: IndexPath) {
+        let nowPlayingMovie = nowPlayingMovies[indexPath.row]
+        cell.imageView.kf.setImage(with: nowPlayingMovie.posterURL)
+        cell.title = nowPlayingMovie.titleWithYear
+        cell.overview = nowPlayingMovie.overview
     }
     
-    func configureMovieTableViewCell(_ cell: MovieTableViewCell, forIndexPath indexPath: IndexPath) {
+    func configureSliderTableViewCell(_ cell: SliderTableViewCell) {
+        cell.numberOfPages = numberOfRowsInCollection
+        cell.reloadData()
+    }
+    
+    func configureUpcomingMovieTableViewCell(_ cell: UpcomingMovieTableViewCell, forIndexPath indexPath: IndexPath) {
         let upcomingMovie = upcomingMovies[indexPath.row]
+        cell.selectionStyle = .none
         cell.thumbnailImageView.kf.setImage(with: upcomingMovie.posterURL)
-        if let year = upcomingMovie.getDateComponent(.year) {
-            cell.title = "\(upcomingMovie.title)(\(year))"
-        } else {
-            cell.title = upcomingMovie.title
-        }
+        cell.title = upcomingMovie.titleWithYear
         cell.subtitle = upcomingMovie.overview
-        
-        if let dateWithDotNotation = upcomingMovie.dateWithDotNotation {
-            cell.date = dateWithDotNotation
-        } else {
-            cell.date = upcomingMovie.releaseDate
-        }
+        cell.date = upcomingMovie.dateWithDotNotation
     }
     
     func fetchUpcomingMovies(completion: @escaping (Error?) -> Void) {
@@ -60,7 +51,7 @@ final class HomeViewModel: TMDBViewModel {
             }
             do {
                 guard let data = result.value?.data else { return }
-                let upcomingMovieResponse = try JSONDecoder().decode(UpcomingMoviesResponse.self, from: data)
+                let upcomingMovieResponse = try JSONDecoder().decode(Response.self, from: data)
                 self.upcomingMovies = upcomingMovieResponse.results
                 completion(nil)
             } catch {
@@ -77,12 +68,20 @@ final class HomeViewModel: TMDBViewModel {
             }
             do {
                 guard let data = result.value?.data else { return }
-                let nowPlayingMovieResponse = try JSONDecoder().decode(NowPlayingMovieResponse.self, from: data)
+                let nowPlayingMovieResponse = try JSONDecoder().decode(Response.self, from: data)
                 self.nowPlayingMovies = nowPlayingMovieResponse.results
                 completion(nil)
             } catch {
                 completion(error)
             }
         }
+    }
+    
+    func upcomingMovieForIndexPath(_ indexPath: IndexPath) -> Movie {
+        upcomingMovies[indexPath.row]
+    }
+    
+    func nowPlayingMovieForPageIndexPath(_ indexPath: IndexPath) -> Movie {
+        nowPlayingMovies[indexPath.row]
     }
 }

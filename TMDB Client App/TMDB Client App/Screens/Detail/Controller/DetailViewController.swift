@@ -7,23 +7,27 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+final class DetailViewController: TMDBViewController<DetailView> {
+    // MARK: - Properties
+    var viewModel: DetailViewModel?
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle { .default }
+    
+    // MARK: - Init
+    init(viewModel: DetailViewModel) {
+        super.init()
+        self.viewModel = viewModel
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    */
-
+    
+    // MARK: - Lifecycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel?.configureDetailView(baseView)
+        title = viewModel?.movie?.titleWithYear
+    }
 }

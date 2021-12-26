@@ -10,7 +10,7 @@ import UIKit
 class TMDBNavigationController: UINavigationController {
     // MARK: - Propeties
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        .lightContent
+        .default
     }
     
     // MARK: - Lifecycle
@@ -19,6 +19,10 @@ class TMDBNavigationController: UINavigationController {
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
         navigationBar.isTranslucent = true
-        navigationBar.barStyle = .black
+        if #available(iOS 11.0, *) {
+            navigationBar.tintColor = Asset.textBlack.color
+        } else {
+            navigationBar.tintColor = .black
+        }
     }
 }
