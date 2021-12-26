@@ -9,12 +9,6 @@ import UIKit
 
 class MovieTableViewCell: UITableViewCell {
     // MARK: - Properties
-    var thumbnailImage: UIImage? {
-        didSet {
-            thumbnailImageView.image = thumbnailImage
-        }
-    }
-    
     var title: String? {
         didSet {
             titleLabel.text = title
@@ -34,9 +28,11 @@ class MovieTableViewCell: UITableViewCell {
     }
     
     // MARK: - UI
-    private lazy var thumbnailImageView: UIImageView = {
+    private(set) lazy var thumbnailImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleToFill
+        imageView.layer.cornerRadius = 8.0
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -49,12 +45,16 @@ class MovieTableViewCell: UITableViewCell {
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13.0, weight: .medium)
+        label.textColor = .gray
+        label.numberOfLines = .zero
         return label
     }()
     
     private lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12.0, weight: .medium)
+        label.textAlignment = .right
+        label.textColor = .gray
         return label
     }()
     

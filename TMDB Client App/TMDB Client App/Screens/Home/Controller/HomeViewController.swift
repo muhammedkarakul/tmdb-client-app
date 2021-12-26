@@ -8,6 +8,22 @@
 import UIKit
 
 final class HomeViewController: TMDBViewController<HomeView> {
+    // MARK: - Properties
+    private let viewModel = HomeViewModel()
+    
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewModel.fetchUpcomingMovies { error in
+            if let error = error {
+                debugPrint(error.localizedDescription)
+                return
+            }
+            
+            self.baseView.reloadData()
+        }
+    }
+    
     // MARK: - Setup
     override func linkInteractor() {
         baseView.setTableViewDelegate(self, andDataSource: self)
@@ -17,7 +33,7 @@ final class HomeViewController: TMDBViewController<HomeView> {
 // MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
             return 256.0
         default:
@@ -28,22 +44,24 @@ extension HomeViewController: UITableViewDelegate {
 
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        viewModel.numberOfSections
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        viewModel.numberOfRowsInSection(section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
+        switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SliderTableViewCell", for: indexPath) as! SliderTableViewCell
-            cell.numberOfPages = 5
+            viewModel.configureSliderTableViewCell(cell)
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! MovieTableViewCell
-            cell.thumbnailImage = Asset.imdbLogo.image
-            cell.title = "title"
-            cell.subtitle = "subtitle"
-            cell.date = "01.01.2001"
+            viewModel.configureMovieTableViewCell(cell, forIndexPath: indexPath)
             return cell
         }
     }

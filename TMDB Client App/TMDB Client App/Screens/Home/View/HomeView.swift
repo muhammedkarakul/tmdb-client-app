@@ -41,4 +41,8 @@ final class HomeView: TMDBView {
         tableView.delegate = delegate
         tableView.dataSource = dataSource
     }
+    
+    func reloadData() {
+        tableView.reloadData()
+    }
 }
