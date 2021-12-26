@@ -1,5 +1,5 @@
 //
-//  MovieTableViewCell.swift
+//  UpcomingMovieTableViewCell.swift
 //  TMDB Client App
 //
 //  Created by Muhammed Karakul on 26.12.2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MovieTableViewCell: UITableViewCell {
+final class UpcomingMovieTableViewCell: UITableViewCell {
     // MARK: - Properties
     var title: String? {
         didSet {
@@ -45,7 +45,11 @@ final class MovieTableViewCell: UITableViewCell {
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 13.0, weight: .medium)
-        label.textColor = .gray
+        if #available(iOS 11.0, *) {
+            label.textColor = Asset.textGray.color
+        } else {
+            label.textColor = .systemGray
+        }
         label.numberOfLines = .zero
         return label
     }()
@@ -54,7 +58,11 @@ final class MovieTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12.0, weight: .medium)
         label.textAlignment = .right
-        label.textColor = .gray
+        if #available(iOS 11.0, *) {
+            label.textColor = Asset.textGray.color
+        } else {
+            label.textColor = .systemGray
+        }
         return label
     }()
     
