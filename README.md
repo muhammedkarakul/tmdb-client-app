@@ -39,7 +39,7 @@ function test() {
 <details>
 <summary>About project structure.</summary>
 <br>
-### Folders
+1. Folders
 
     .
     ├── App                                         # Files used globally the application.
@@ -58,7 +58,7 @@ function test() {
         └── Config.xcconfig                         # You need to generate your own config file for sensitive key definitions.
 
 <br>
-### 3rd Party Libraries
+2. 3rd Party Libraries
 
 Cocoapods used for package managing.
 
