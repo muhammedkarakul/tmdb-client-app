@@ -6,25 +6,29 @@
 <summary>Instructions for project setup.</summary>
 <br>
 1. Clone the project.
+<br>
 2. Go to "TMDB Client App" folder location on terminal and enter "pod install --repo-update" command.
+<br>
 3. Open .xcworkspace file.
+<br>
 4. Create config folder in "Supporting Files" folder.
+<br>
 <img src="Instruction Assets/instruction_0.jpeg"/>
-
+<br>
 <img src="Instruction Assets/instruction_1.jpeg"/>
-    
+<br>
 5. Add your TMDB api key in your config file.
-
+<br>
 <img src="Instruction Assets/instruction_2.jpeg"/>
-    
+<br>
 6. Give referance your api key defination in info.plist file.
-
+<br>
 <img src="Instruction Assets/instruction_3.jpeg"/>
-    
+<br>
 7. Set your project Debug and Release configuration to your config file.
-
+<br>
 <img src="Instruction Assets/instruction_4.jpeg"/>
-    
+<br>    
 8. That's all folks! You can call your api key like below;
 
 ```swift
