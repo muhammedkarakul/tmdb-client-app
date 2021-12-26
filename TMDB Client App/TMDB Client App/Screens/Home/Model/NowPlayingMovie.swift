@@ -22,3 +22,9 @@ struct NowPlayingMovie: Codable {
         case posterPath = "poster_path"
     }
 }
+
+extension NowPlayingMovie {
+    var posterURL: URL? {
+        URL(string: "https://image.tmdb.org/t/p/original\(posterPath)")
+    }
+}

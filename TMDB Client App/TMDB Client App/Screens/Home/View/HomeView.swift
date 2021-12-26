@@ -11,7 +11,10 @@ final class HomeView: TMDBView {
     // MARK: - Properties
     private var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.contentInset = .zero
+        tableView.bounces = false
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior = .never
+        }
         tableView.showsHorizontalScrollIndicator = false
         tableView.showsVerticalScrollIndicator = false
         return tableView

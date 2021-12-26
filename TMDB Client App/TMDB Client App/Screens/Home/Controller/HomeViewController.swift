@@ -11,9 +11,28 @@ final class HomeViewController: TMDBViewController<HomeView> {
     // MARK: - Properties
     private let viewModel = HomeViewModel()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchUpcomingMovies()
+        fetchNowPlayingMovies()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    // MARK: - Setup
+    override func linkInteractor() {
+        super.linkInteractor()
+        baseView.setTableViewDelegate(self, andDataSource: self)
+    }
+    
+    // MARK: - Methods
+    private func fetchUpcomingMovies() {
         viewModel.fetchUpcomingMovies { error in
             if let error = error {
                 debugPrint(error.localizedDescription)
@@ -24,9 +43,15 @@ final class HomeViewController: TMDBViewController<HomeView> {
         }
     }
     
-    // MARK: - Setup
-    override func linkInteractor() {
-        baseView.setTableViewDelegate(self, andDataSource: self)
+    private func fetchNowPlayingMovies() {
+        viewModel.fetchNowPlayingMovies { error in
+            if let error = error {
+                debugPrint(error.localizedDescription)
+                return
+            }
+            
+            self.baseView.reloadData()
+        }
     }
 }
 

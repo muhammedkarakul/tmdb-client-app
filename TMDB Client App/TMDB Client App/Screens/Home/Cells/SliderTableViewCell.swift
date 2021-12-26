@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SliderTableViewCell: UITableViewCell {
+final class SliderTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     var numberOfPages: Int = .zero {
@@ -29,10 +29,12 @@ class SliderTableViewCell: UITableViewCell {
         scrollView.isPagingEnabled = true
         scrollView.isScrollEnabled = true
         scrollView.delegate = self
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
     
-    private lazy var imageViews = [UIImageView]()
+    private(set) lazy var sliderViews = [SliderView]()
     
     // MARK: - Setup
     override func layoutSubviews() {
@@ -43,7 +45,7 @@ class SliderTableViewCell: UITableViewCell {
             make.edges.equalToSuperview()
         }
         
-        scrollView.addSubview(pageControl)
+        contentView.addSubview(pageControl)
         pageControl.snp.makeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
         }
@@ -55,15 +57,15 @@ class SliderTableViewCell: UITableViewCell {
         
         for pageIndex in 0..<numberOfPages {
             
-            var tempImageViewFrame: CGRect = .zero
+            var frame: CGRect = .zero
             
-            tempImageViewFrame.origin.x = scrollView.frame.size.width * CGFloat(pageIndex)
-            tempImageViewFrame.size = scrollView.frame.size
+            frame.origin.x = scrollView.frame.size.width * CGFloat(pageIndex)
+            frame.size = scrollView.frame.size
             
-            let tempImageView = UIImageView(frame: tempImageViewFrame)
-            tempImageView.image = Asset.imdbLogo.image
-            imageViews.append(tempImageView)
-            scrollView.addSubview(tempImageView)
+            let sliderView = SliderView()
+            sliderView.frame = frame
+            sliderViews.append(sliderView)
+            scrollView.addSubview(sliderView)
             
             scrollView.contentSize = CGSize(width: (scrollView.frame.size.width * CGFloat(numberOfPages)), height: scrollView.frame.size.height)
         }
